@@ -87,6 +87,9 @@ AIC(m1, m2, m3, m4)  # marginal AIC
 Fill in the blank: Model \_\_\_\_ appears to have the best out-of-sample
 prediction accuracy?
 
+Model 4 has the lowest AIC, so it appears to have the best out-of-sample
+prediction accuracy.
+
 ## Averaging M1, M2, M3, and M4
 
 In model averaging, the Akaike weights are usually used, defined as
@@ -120,7 +123,7 @@ model.sel(m1, m2, m3, m4, rank = "AIC")  # see the last column
     ## 1+m+ss_c|sc = '1 + minrty + ses_cmc | school'
     ## 1+ss_c|sc = '1 + ses_cmc | school'
 
-Fill in the blank: Model \_\_\_\_ has the highest weight
+*Model 4 has the highest weight.*
 
 To average the models, we use
 
@@ -217,6 +220,9 @@ unlist(mse)
 Fill in the blank: From the output above, model \_\_\_\_ shows the
 highest out-of-sample prediction accuracy.
 
+*Model 4 shows the highest out-of-sample prediction accuracy, with the
+lowest mean squared error.*
+
 ## Model Averaging of More Models
 
 The following performs model averaging of 23 best possible submodels
@@ -306,9 +312,10 @@ importance(m_avg2)
     ## Sum of weights:      1.00   1.00   1.00    1.00 0.24  0.21     
     ## N containing models:    3      3      3       3    1     1
 
-Fill in the blanks: Aside from `ses_cm` and `ses_cmc`, \_\_\_\_\_\_ are
-the most important for predicting `mAch`, while \_\_\_\_\_ is the least
-important?
+Fill in the blanks: Aside from `ses_cm` and `ses_cmc`, minority status
+and sex are the most important for predicting `mAch`, while minority
+school-centered (school’s proportion of minority students) is the least
+important.
 
 To learn more about averaging, check out this paper:
 <https://www.sciencedirect.com/science/article/pii/S0022249699912786>
